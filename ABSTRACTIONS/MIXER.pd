@@ -1,0 +1,55 @@
+#N canvas 566 253 692 503 12;
+#X obj 103 100 hsl 53 20 1 0 0 0 empty empty PAN 5 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj -27 204 *~;
+#X obj 79 204 *~;
+#X obj 121 166 abs;
+#X obj 121 141 - 1;
+#X obj 96 13 loadbang;
+#X obj 158 120 tgl 20 0 empty empty S 6 10 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 103 120 hsl 53 20 0 2 0 0 empty empty dB 5 8 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 83 272 *~;
+#X obj -24 273 *~;
+#X msg 95 57 0.5;
+#X msg 171 56 0;
+#X obj 182 190 s osc-on\$1;
+#X obj 158 100 tgl 20 0 empty empty P 6 10 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 193 161 s proc-on\$1;
+#X obj -68 68 r~ proc\$1;
+#X obj 312 19 r instruname\$1;
+#X obj 312 46 r audio-module-name\$1;
+#X symbolatom 178 101 10 0 0 0 - - - 0;
+#X symbolatom 178 121 10 0 0 0 - - - 0;
+#X obj 19 71 r~ osc\$1;
+#X obj -24 342 throw~ masterL;
+#X obj 90 343 throw~ masterR;
+#X msg 132 57 1;
+#X connect 0 0 1 1;
+#X connect 0 0 4 0;
+#X connect 1 0 9 0;
+#X connect 2 0 8 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 0;
+#X connect 5 0 10 0;
+#X connect 5 0 23 0;
+#X connect 5 0 11 0;
+#X connect 6 0 12 0;
+#X connect 7 0 8 1;
+#X connect 7 0 9 1;
+#X connect 8 0 22 0;
+#X connect 9 0 21 0;
+#X connect 10 0 0 0;
+#X connect 11 0 6 0;
+#X connect 11 0 13 0;
+#X connect 13 0 14 0;
+#X connect 15 0 1 0;
+#X connect 15 0 2 0;
+#X connect 16 0 19 0;
+#X connect 17 0 18 0;
+#X connect 20 0 1 0;
+#X connect 20 0 2 0;
+#X connect 23 0 7 0;
+#X coords 0 -1 1 1 150 40 2 100 100;
