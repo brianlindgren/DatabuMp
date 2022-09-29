@@ -1,29 +1,29 @@
 #N canvas 208 65 1232 723 12;
 #N canvas 0 25 450 278 (subpatch) 0;
 #X array auto\$1 721 float 2;
-#X coords 0 2.9 721 0 600 57 2 0 0;
+#X coords 0 3000 721 5 600 57 2 0 0;
 #X restore 150 13 graph;
-#X obj 85 0 tgl 50 0 empty empty Rec/Read 2 25 0 10 #fcfcfc #000000
-#000000 0 1;
-#X obj 135 15 vsl 15 52 0 2.9 0 0 empty sliderrange\$2 empty 0 -9 0
-10 #fcfcfc #000000 #000000 0 1;
-#X obj 259 168 r metro-location;
-#X obj 259 265 tabread auto\$1;
+#X obj 85 0 tgl 50 0 empty empty Record 8 25 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 135 15 vsl 15 52 5 3000 0 0 empty sliderrange\$2 empty 0 -9
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 366 136 r metro-location;
+#X obj 366 270 tabread auto\$1;
 #X obj 160 121 t b f;
 #X obj 146 178 spigot;
 #X obj 75 291 tabwrite auto\$1;
-#X obj 209 164 - 1;
-#X obj 209 188 abs;
-#X obj 259 228 spigot;
+#X obj 405 184 - 1;
+#X obj 405 208 abs;
+#X obj 366 233 spigot;
 #X obj 146 85 r metro-location;
 #X msg 137 -79 set \$1;
 #X obj 16 -81 loadbang;
 #X msg 19 -57 0;
 #X floatatom 85 50 5 0 0 0 - - - 0;
 #X obj 146 206 t b f;
-#X obj 259 289 int;
+#X obj 366 294 int;
 #X obj 47 251 i;
-#X obj 2 2 cnv 15 80 23 empty type-lab\$2 MODE 0 15 0 18 #f8d8fc #404040
+#X obj 2 2 cnv 15 80 23 empty type-lab\$2 METRO 0 15 0 18 #f8d8fc #404040
 0;
 #N canvas 648 245 688 556 label 0;
 #X obj 49 28 loadbang;
@@ -70,7 +70,7 @@
 #X connect 17 0 2 0;
 #X connect 18 0 2 0;
 #X restore 772 395 pd label;
-#X obj 2 24 cnv 15 80 23 empty instru-lab\$3 INS\$3 0 15 0 18 #e0e0e0
+#X obj 2 24 cnv 15 80 23 empty instru-lab\$3 empty 0 15 0 18 #e0e0e0
 #404040 0;
 #X obj 2 46 cnv 15 80 23 empty empty \$1 0 15 0 18 #e0e0e0 #404040
 0;
@@ -97,8 +97,8 @@
 #X connect 9 0 2 0;
 #X restore 47 396 pd auto-router;
 #X obj 137 -147 r autoval\$1;
-#X obj 259 328 s autoval\$1;
-#X obj 53 176 r autoval\$1;
+#X obj 366 333 s autoval\$1;
+#X obj 29 184 r autoval\$1;
 #N canvas 436 45 832 671 read-write-automation 0;
 #X obj 77 70 r savedata;
 #X obj 32 161 COUNTER;
@@ -136,7 +136,7 @@
 #X floatatom 84 187 5 0 0 0 - - - 0;
 #X msg 201 362 write ../AUTO/auto0.txt;
 #X msg 235 322 set write ../AUTO/\$1\$2.txt;
-#X msg 606 442 read ../AUTO/auto2.txt;
+#X msg 606 442 read ../AUTO/auto0.txt;
 #X msg 640 402 set read ../AUTO/\$1\$2.txt;
 #X connect 0 0 9 0;
 #X connect 1 0 27 0;
@@ -201,7 +201,7 @@
 #X msg 81 -60 set \$1;
 #X obj 153 0 hsl 595 13 0 721 0 0 metro-loc-bar-s metro-loc-bar empty
 -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
-#N canvas 37 121 814 706 array-resize 1;
+#N canvas 37 121 814 706 array-resize 0;
 #X obj 226 130 sel 0 1 2;
 #X obj 225 107 \$2;
 #X obj 237 176 \$1;
@@ -293,20 +293,20 @@ y-range-to;
 #X obj 139 91 \$3;
 #X floatatom 130 130 5 0 0 0 - - - 0;
 #X floatatom 130 153 5 0 0 0 - - - 0;
-#X floatatom 129 176 5 0 0 0 - - - 0;
+#X floatatom 130 176 5 0 0 0 - - - 0;
 #X obj 75 62 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X text 173 178 INSTRU #;
-#X text 177 155 RANGE TYPE;
+#X text 177 152 INSTRU #;
+#X text 177 175 RANGE TYPE;
 #X text 177 129 UNIQUE # / AUTO FILE #;
 #X text 71 39 IDENTIFIER TOOL;
 #X text 262 149 Range: 0=metro \; 1=zoom \; 2=mode;
 #X obj 45 4 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
 0 1;
 #X text 105 131 1);
-#X text 103 150 2);
-#X text 103 172 3);
-#X text 170 108 THIS AUTO LANE:;
+#X text 105 150 2);
+#X text 105 169 3);
+#X text 141 104 IDENTIFICATION FOR THIS AUTO LANE:;
 #X connect 0 0 1 0;
 #X connect 0 0 2 0;
 #X connect 0 0 3 0;
@@ -318,6 +318,12 @@ y-range-to;
 #X connect 7 0 3 0;
 #X coords 0 -1 1 1 300 100 2 100 100;
 #X restore 846 8 pd identify;
+#X text 417 232 If Record is On \, do not tabread automation;
+#X text 199 178 If record is on \, then tabwrite new automation, f
+16;
+#X text -26 122 Receive new auto from a variety of sources, f 11;
+#X text -56 250 Only write when new metro-location is banged, f 14
+;
 #X connect 1 0 5 0;
 #X connect 2 0 18 1;
 #X connect 2 0 28 0;

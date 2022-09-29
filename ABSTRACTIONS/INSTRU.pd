@@ -4,7 +4,7 @@
 #X array pitch\$1 721 float 4;
 #X coords 0 75.6913 721 0 150 34 2 0 0;
 #X restore 100 166 graph;
-#N canvas 781 87 648 732 load 0;
+#N canvas 781 87 648 732 load 1;
 #X obj 281 230 textfile;
 #X msg 228 152 rewind;
 #X obj 281 270 symbol;
@@ -47,7 +47,7 @@
 #X restore -79 382 pd advancer;
 #X obj 448 321 s instruname\$1;
 #X msg 427 296 set \$1;
-#N canvas 719 99 721 647 measure-dataset-dimensions 1;
+#N canvas 719 99 721 647 measure-dataset-dimensions 0;
 #X obj 128 -83 inlet;
 #X obj 133 126 until;
 #X msg 117 92 10000;
@@ -121,7 +121,6 @@
 #X msg 282 297 set read DATA/\$1;
 #X obj 398 77 declare -path ..;
 #X obj 134 -7 r loadbang2;
-#X obj 250 -7 r flb2;
 #X obj 113 24 loadbang;
 #X obj 247 10 r flb;
 #X connect 0 0 2 0;
@@ -150,8 +149,8 @@
 #X connect 19 0 0 0;
 #X connect 20 0 6 0;
 #X connect 20 0 18 1;
+#X connect 23 0 4 0;
 #X connect 24 0 4 0;
-#X connect 25 0 4 0;
 #X restore -97 119 pd load;
 #N canvas 399 104 1041 768 player 0;
 #N canvas 319 31 612 841 average 0;
